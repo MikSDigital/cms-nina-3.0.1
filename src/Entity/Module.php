@@ -26,7 +26,7 @@ class Module
     private $pages;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\TypeModule", mappedBy="modules")
+     * @ORM\ManyToOne(targetEntity="App\Entity\TypeModule", inversedBy="modules")
      */
     private $type;
 
@@ -118,33 +118,23 @@ class Module
     }
 
     /**
-     * Add type
+     * Set type
      *
      * @param \App\Entity\TypeModule $type
      *
      * @return Module
      */
-    public function addType(\App\Entity\TypeModule $type)
+    public function setType(\App\Entity\TypeModule $type = null)
     {
-        $this->type[] = $type;
-    
-        return $this;
-    }
+        $this->type = $type;
 
-    /**
-     * Remove type
-     *
-     * @param \App\Entity\TypeModule $type
-     */
-    public function removeType(\App\Entity\TypeModule $type)
-    {
-        $this->type->removeElement($type);
+        return $this;
     }
 
     /**
      * Get type
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \App\Entity\TypeModule
      */
     public function getType()
     {

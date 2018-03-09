@@ -37,7 +37,7 @@ class Champ
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\TypeModule", mappedBy="champs")
      */
-    private $modules;
+    private $typesModules;
 
     public function __toString()
     {
@@ -106,40 +106,40 @@ class Champ
      */
     public function __construct()
     {
-        $this->modules = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->typesModules = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add module
+     * Add typeModule
      *
-     * @param \App\Entity\TypeModule $module
+     * @param \App\Entity\TypeModule $typeModule
      *
      * @return Champ
      */
-    public function addModule(\App\Entity\TypeModule $module)
+    public function addTypeModule(\App\Entity\TypeModule $typeModule)
     {
-        $this->modules[] = $module;
+        $this->typesModules[] = $typeModule;
     
         return $this;
     }
 
     /**
-     * Remove module
+     * Remove typeModule
      *
-     * @param \App\Entity\TypeModule $module
+     * @param \App\Entity\TypeModule $typeModule
      */
-    public function removeModule(\App\Entity\TypeModule $module)
+    public function removeTypeModule(\App\Entity\TypeModule $typeModule)
     {
-        $this->modules->removeElement($module);
+        $this->typesModules->removeElement($typeModule);
     }
 
     /**
-     * Get modules
+     * Get typesModules
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getModules()
+    public function getTypesModules()
     {
-        return $this->modules;
+        return $this->typesModules;
     }
 }

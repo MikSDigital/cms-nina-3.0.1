@@ -1939,21 +1939,23 @@ button:focus {
   height: 2rem;
   line-height: 2rem;
   font-size: 60%;
-  box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
-  transition: box-shadow .15s; }
+  box-shadow: inset -2rem 0 0 #D9534F, inset 0 0 0 1px #D9534F;
+  transition: box-shadow .15s;
+  /*&::before {
+    content: "Ô£ò";
+    float: right;
+    margin-right: $switch-size /3;
+    }*/ }
   .switch::before, .switch::after {
     font-weight: bold;
     color: #fff; }
-  .switch::before {
-    content: "Ô£ò";
-    float: right;
-    margin-right: 0.6666666667rem; }
   .switch:checked {
-    box-shadow: inset 2rem 0 0 #A1BB0C, inset 0 0 0 1px #A1BB0C; }
-    .switch:checked::before {
+    box-shadow: inset 2rem 0 0 #A1BB0C, inset 0 0 0 1px #A1BB0C;
+    /*&::before {
       content: "Ô£ô";
       float: left;
-      margin-left: 0.6666666667rem; }
+      margin-left: $switch-size /3;
+    }*/ }
 
 .checkbox input {
   width: 2rem;

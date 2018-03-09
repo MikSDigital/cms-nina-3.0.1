@@ -1,9 +1,12 @@
 parameters:
    type:
-        Texte: text
-        Zone de texte: textarea
-        Url: url
-        E-mail: email
+        Texte: Text
+        Zone de texte: Textarea
+        Url: Url
+        E-mail: Email
+        Nombre: Number
+        Pourcentage: Percent
+        Téléphone: Tel
 
 easy_admin:
     entities:

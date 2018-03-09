@@ -54,18 +54,18 @@
     font-weight: bold;
     color: #fff;
   }
-  &::before {
+  /*&::before {
     content: "✕";
     float: right;
     margin-right: $switch-size /3;
-    }
+    }*/
   &:checked {
     box-shadow: inset #{$switch-size} 0 0 $color-success, inset 0 0 0 1px $color-success;
-    &::before {
+    /*&::before {
       content: "✓";
       float: left;
       margin-left: $switch-size /3;
-    }
+    }*/
   }
 }
 

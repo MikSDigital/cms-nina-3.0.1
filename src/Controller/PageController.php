@@ -62,7 +62,7 @@ class PageController extends Controller
             ->add('contenu', TextareaType::class, array('label'=>'Votre commentaire :'))
             ->add('envoi', SubmitType::class, array('attr'=>array('class'=>'envoiCom')));
 
-        $form=$formBuilder->getForm();
+        $form = $formBuilder->getForm();
 
         if($request->isMethod('POST')){
             $form->handleRequest($request);

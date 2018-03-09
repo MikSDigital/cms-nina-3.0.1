@@ -28,12 +28,12 @@ class TypeModule
     private $nom;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Module", inversedBy="type")
+     * @ORM\OneToMany(targetEntity="App\Entity\Module", mappedBy="type")
      */
     private $modules;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Champ", inversedBy="modules", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="App\Entity\Champ", inversedBy="typesModules", cascade={"persist"})
      */
     private $champs;
 
@@ -95,29 +95,41 @@ class TypeModule
         return $this->champs;
     }
 
+
     /**
-     * Set modules
+     * Add module
      *
-     * @param \App\Entity\Module $modules
+     * @param \App\Entity\Module $module
      *
      * @return TypeModule
      */
-    public function setModules(\App\Entity\Module $modules = null)
+    public function addType(\App\Entity\Module $module)
     {
-        $this->modules = $modules;
-    
+        $this->modules[] = $module;
+
         return $this;
+    }
+
+    /**
+     * Remove module
+     *
+     * @param \App\Entity\Module $module
+     */
+    public function removeType(\App\Entity\Module $module)
+    {
+        $this->modules->removeElement($module);
     }
 
     /**
      * Get modules
      *
-     * @return \App\Entity\Module
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getModules()
     {
         return $this->modules;
     }
+
     /**
      * Constructor
      */

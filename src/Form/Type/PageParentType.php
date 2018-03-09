@@ -31,7 +31,7 @@ class PageParentType extends AbstractType
                 ->add('pageParent', EntityType::class, array('class' => 'App\Entity\Page', 'nullable' => true, 'choice_label' => 'titre', 'data' => $this->em->getReference(Page::class, $_GET['idPageParent'])));
         }else{
             $builder
-                ->add('pageParent', EntityType::class, array('class' => 'App\Entity\Page', 'choice_label' => 'titre'));
+                ->add('pageParent', EntityType::class, array('class' => 'App\Entity\Page', 'choice_label' => 'titre', 'empty_data' => null, 'required' => false));
         }
     }
 

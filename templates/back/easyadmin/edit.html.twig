@@ -53,7 +53,20 @@
                     });
             });
 
-            $
+            /* Ajout d'un module dans une page */
+            $("#edit-page_active-form").on('change', "select[id^='page_active_modules']", function(){
+                cible = $(this);
+                $.ajax({
+                    url: "{{ path('choisirTypeModule') }}",
+                    method: "post",
+                    data: {idTypeModule: $(this).val()}
+                })
+                    .done(function(msg){
+                        cible.closest("div[id^='page_active_modules']").html(msg).find('#module_type').attr('disabled', true);
+                    })
+                    .fail(function(){
+                    });
+            });
         });
     </script>
 

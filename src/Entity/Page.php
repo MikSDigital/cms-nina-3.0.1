@@ -29,13 +29,6 @@ class Page
     private $titre;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="contenu", type="text")
-     */
-    private $contenu;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur", inversedBy="pages")
      */
     private $auteur;
@@ -189,30 +182,6 @@ class Page
     public function getTitre()
     {
         return $this->titre;
-    }
-
-    /**
-     * Set contenu
-     *
-     * @param string $contenu
-     *
-     * @return Page
-     */
-    public function setContenu($contenu)
-    {
-        $this->contenu = $contenu;
-
-        return $this;
-    }
-
-    /**
-     * Get contenu
-     *
-     * @return string
-     */
-    public function getContenu()
-    {
-        return $this->contenu;
     }
 
     /**

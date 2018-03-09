@@ -49,15 +49,14 @@ easy_admin:
                 fields:
                     - { type: 'tab', label: 'Contenus' }
                     - { property: 'titre', type: 'text' }
-                    - contenu
-#                    - { property: 'modules', type: 'App\Form\Type\ModuleType', multipe: true, type_options: { by_reference: false } }
-                    - image
+                    - { property: 'modules', type: 'collection', type_options: { entry_type: 'App\Form\Type\ModuleType', by_reference: true } }
                     - { type: 'tab', label: 'Historique' }
                     - datePublication
                     - dateDepublication
                     - { type: 'tab', label: 'Arborescence' }
                     - categories
-                    - { property: 'pageParent', type: 'App\Form\Type\PageParentType' }
+                    #- { property: 'pageParent', type: 'App\Form\Type\PageParentType', by_reference: true }
+                    - pageParent
                     - position
                     - active
                     - corbeille
